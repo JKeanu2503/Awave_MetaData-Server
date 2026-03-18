@@ -1,16 +1,13 @@
-# This is a sample Python script.
+from fastapi import FastAPI
+from database import engine, Base
+import models # Wichtig, damit SQLAlchemy die Modelle registriert
 
-# Press Umschalt+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+app = FastAPI()
 
+# Das hier ist der "Zündschlüssel": 
+# Er erstellt die Tabellen in Postgres, falls sie nicht existieren.
+Base.metadata.create_all(bind=engine)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Strg+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+@app.get("/")
+def read_root():
+    return {"status": "MetadataServer läuft und DB ist verbunden"}
