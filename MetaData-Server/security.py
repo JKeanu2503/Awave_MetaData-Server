@@ -17,7 +17,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
 # Das ist dein geheimer Schlüssel – in echt sollte der in einer .env Datei stehen!
 SECRET_KEY = "DEIN_SUPER_GEHEIMER_SCHLÜSSEL_VON_AWAVE"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 24 # Token ist 24h gültig
+ACCESS_TOKEN_EXPIRE_MINUTES = 60 * 12 # Token ist 12h gültig
 
 def create_access_token(data: dict):
     to_encode = data.copy()
