@@ -49,25 +49,29 @@ Alle Entitäten mit ihren jeweiligen Attributen unterteilen sich in drei Kategor
 	
 	- Account: Identifikation eines Nutzers
 		- account_id
-		- created_at
-		- email
 		- username
+		- email
 		- hashed_pw
 		- profilpicture_url
-		- date_od_birth
+		- date_of_birth
+		- created_at
+		- is_active
 		
 	- Settings: Account-speziefische Endgerät-übergreifende Einstellungen
 		- settings_id
-		- prefered_language
+		- auto_select_language
 		- audio_language
 		- subtitle_language
 		- seen_media_progress_value	(Beschreibt in % ab wann ein Video als "Gesehen" markiert wird)
-		- prefered_resolution
-		- select_autoplay
 		
 	- Playlist: Vom Nutzer selbst erstellte Playlist, die manuell hinzugefügte Media oder durch verschiedene Tags autogeneriert ist
 		- playlist_id
 		- title
+		- is_dynamic (Beschreibt, ob Nutzer manuell diese mit Medien füllt oder durch Tags autogeneriert wird)
+		- filter_tag_id
+		- filter_language_id
+		- filter_actor_id
+		- filter_publisher_id
 	
 - Grundstruktur der Medien (Gelb)
 
@@ -79,14 +83,42 @@ Alle Entitäten mit ihren jeweiligen Attributen unterteilen sich in drei Kategor
 		- title_alternative
 		- description
 		- release_date
-		- upload_date
 		- duration_in_sec
 		- age_rating
-		- thumbnail_url
+		- upload_date
 		- media_url
+		- thumbnail_url
 		- timestamp_intro_start
 		- timestamp_intro_end
 		- timestamp_outro_start
 		- timestamp_outro_end
 		
+	- Movie: Erweiterte Media in Form eines Films
+		- movie_id
+		
+	- Season: Staffel, die Folgen enthält
+		- season_id
+		- season_number
+		- cover_url
+		- release_date
+
+	- Episode: Erweiterte Media in Form einer Folge einer Serie
+		- episode_id
+		- episode_number
 	
+	- Series: Serie, die Staffeln enthält
+		- series_id
+		- title
+		- title_alternative
+		- cover_url
+		- release_date
+		
+	- Category: Übergreifende thematische Unterteilung von Medienwerken
+		- category_id
+		- title
+		- icon_type
+		
+	- Collection: Gruppierung thematisch gleich passender Medienwerke unterhalb einer Kategorie
+		- collection_id
+		- title
+		- cover_url
