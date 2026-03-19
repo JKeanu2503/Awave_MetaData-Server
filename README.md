@@ -41,7 +41,7 @@ Dieser übernimmt konkret folgende Aufgaben:
 
 <img src= "erm.png" alt="ERM konnte nicht geladen werden" width="1000">
 
-Alle Entitäten mit ihren jeweiligen Attributen unterteilen sich in drei Kategorien:
+### Alle Entitäten mit ihren jeweiligen Attributen unterteilen sich in drei Kategorien:
 
 - Account-Relevant (Lila)
 	
@@ -122,3 +122,29 @@ Alle Entitäten mit ihren jeweiligen Attributen unterteilen sich in drei Kategor
 		- collection_id
 		- title
 		- cover_url
+		
+### Weitere Attribute die durch die jeweilige Relation der Entitäten entstehen
+
+| Nr. | Entität 1 | Beziehungs-Typ | Entität 2 | Beschreibung |
+| :---: | :---: | :---: | :---: | :--- |
+| 1 | Media | (is a) | Episode | Eine Episode ist eine Media
+| 2 | Media | (is a) | Movie | Ein Movie ist eine Media
+| 3 | Publisher | 1/M:N | Movie | Ein Publisher kann mehrere Movie produzieren. Ein Movie hat mindestens einen Publisher
+| 4 | Movie | M:N | Actor | Movie können viele Actor haben. Actor können an vielen Movie beteiligt sein
+| 5 | Movie | M:N | Tag | Movie können viele Tag haben. Tag können mehreren Movie zugeordnet sein
+| 6 | Category | 1:N | Movie | Eine Category kann mehrere Movie haben. Ein Movie ist explizit einer Category zugeordnet
+| 7 | Collection | 1/0:1/N | Movie | Eine Collection hat mindestens ein Movie. Ein Movie ist eventuell Explizit einer Collection zugeordnet
+| 8 | Season | 1:1/N | Episode | Eine Season hat mindestens eine Episode. Eine Episode ist explizit einer Season zugeordnet
+| 9 | Series | 1:1/N | Season | Eine Series hat mindestens eine Season. Eine Season ist explizit einer Series zugeordnet
+| 10 | Publisher | 1/M:N | Series | Ein Publisher kann mehrere Series produzieren. Eine Series hat mindestens einen Publisher
+| 11 | Series | M:N | Actor | Series können viele Actor haben. Actor können an vielen Series beteiligt sein
+| 12 | Series | M:N | Tag | Series können viele Tag haben. Tag können mehreren Series zugeordnet sein
+| 13 | Series | M:N | Language | Series können viele Language haben. Language können mehreren Series zugeordnet sein
+| 14 | Media | M:N | Language | Media können viele Language haben. Language können mehreren Media zugeordnet sein
+| 15 | Category | 1:N | Series | Eine Category beinhalten mehrere Series. Eine Series ist explizit einer Category zugeordnet
+| 16 | Category | 1:N | Collection | Eine Category beinhalten mehrere Collection. Eine Collection ist explizit einer Category zugeordnet
+| 17 | Media | M:N | Playlist | Eine Media kann mehrere Playlist zugeordnet sein. Eine Playlist kann mehrere Medien haben
+| 18 | Account | 1:N | Playlist | Jeder Account kann viele Playlist beinhalten. Eine Playlist ist explizit einem Account zugeordnet
+| 19 | Account | 1:1 | Settings | Jeder Account hat exakt eine Settings und anders herum
+| 20 | Account | M:N | Media | Ein Account kann mehrere Media gesehen haben. Ein Media kann von mehrere Account gesehen worden sein
+| 21 | Account | M:N | Category | Ein Account hat Zugriff auf mehrere Category. Eine Category kann für mehrere Accounts freigeschaltet worden sein
