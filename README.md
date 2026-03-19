@@ -125,6 +125,8 @@ Dieser übernimmt konkret folgende Aufgaben:
 		
 ### Weitere Attribute die durch die jeweilige Relation der Entitäten entstehen
 
+Relationen zwischen den Entitäten:
+
 | Nr. | Entität 1 | Beziehungs-Typ | Entität 2 | Beschreibung |
 | :---: | :---: | :---: | :---: | :--- |
 | 1 | Media | (is a) | Episode | Eine Episode ist eine Media
@@ -148,3 +150,13 @@ Dieser übernimmt konkret folgende Aufgaben:
 | 19 | Account | 1:1 | Settings | Jeder Account hat exakt eine Settings und anders herum
 | 20 | Account | M:N | Media | Ein Account kann mehrere Media gesehen haben. Ein Media kann von mehrere Account gesehen worden sein
 | 21 | Account | M:N | Category | Ein Account hat Zugriff auf mehrere Category. Eine Category kann für mehrere Accounts freigeschaltet worden sein
+
+Ergänzende Attribute jeweiliger Relationen:
+
+| Nr. | Attribute | Beschreibung |
+| :---: | :---: | :--- |
+| 4 | played_as | Als wen der Schauspieler im Film spielt
+| 4 | is_only_voice | Ob der Schauspieler im Film nur als Syncronrolle wirkt
+| 11 | played_as | Als wen der Schauspieler in der Serie spielt
+| 11 | is_only_voice | Ob der Schauspieler in der Serie nur als Syncronrolle wirkt
+| 20 | progress_in_seconds | Inwieweit ein Account die jeweilige Media soweit gesehen hat - zur Zwischenspeicherung (-1, 0, x)
